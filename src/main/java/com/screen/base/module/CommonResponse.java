@@ -4,7 +4,7 @@ import com.screen.base.CommonStatus;
 import lombok.Data;
 
 @Data
-public class CommonResponse<T> {
+public class  CommonResponse<T> {
 
 
 
@@ -14,6 +14,10 @@ public class CommonResponse<T> {
 
     public CommonResponse() {
 
+    }
+
+    public static CommonResponse success() {
+        return new CommonResponse(CommonStatus.OK);
     }
 
     public CommonResponse(T data) {
@@ -32,4 +36,5 @@ public class CommonResponse<T> {
         this.message = message;
         this.data = data;
     }
+
 }

@@ -11,6 +11,10 @@ public class UserScreen {
 
     private String avatarUrl;
 
+    private Integer type;
+
+    private Integer vip;
+
     private Date crtTime;
 
     private Date updTime;
@@ -49,6 +53,22 @@ public class UserScreen {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl == null ? null : avatarUrl.trim();
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public Integer getVip() {
+        return vip;
+    }
+
+    public void setVip(Integer vip) {
+        this.vip = vip;
     }
 
     public Date getCrtTime() {
