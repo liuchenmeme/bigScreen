@@ -1,0 +1,19 @@
+
+spring:
+#  redis:
+#    host: 192.168.47.128
+#    port: 6379
+#    database: 0
+  datasource:
+    url: jdbc:mysql://47.105.155.220:3306/mytest?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+server:
+  port: 8081
+  servlet:
+    context-path: /wx-redis
+mybatis:
+  mapperLocations: classpath:mapper/*.xml	#mapper文件路径
+  typeAliasesPackage: com.screen.module	#要配置别名的类包路径
