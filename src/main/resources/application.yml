@@ -4,7 +4,7 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
-  #  redis:
+#    redis:
 #    host: 192.168.47.128
 #    port: 6379
 #    database: 0
@@ -14,6 +14,8 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    platform: mysql
+
 server:
   port: 8081
   servlet:
@@ -23,3 +25,9 @@ mybatis:
   typeAliasesPackage: com.screen.module	#要配置别名的类包路径
   configuration:
     call-setters-on-nulls: true #表单提交null 不保存null
+
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true

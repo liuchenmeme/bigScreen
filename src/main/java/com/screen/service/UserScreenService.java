@@ -1,20 +1,24 @@
 package com.screen.service;
 
-import com.screen.dao.UserDao;
-import com.screen.dao.UserScreenMapper;
-import com.screen.module.User;
 import com.screen.module.UserScreen;
+import org.nutz.dao.Cnd;
+import org.nutz.dao.Dao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserScreenService {
 
-    @Resource// 使用Autowired会报警告，但是没影响
-    private UserScreenMapper userScreenMapper;
+    @Autowired
+    private Dao dao;
 
     public void insertUser(UserScreen user) {
-        userScreenMapper.insert(user);
+        dao.insertOrUpdate(user);
+    }
+
+    public List<UserScreen> selectUsers() {
+        return dao.query(UserScreen.class,Cnd.cri());
     }
 }

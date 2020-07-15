@@ -1,5 +1,7 @@
 package com.screen.module;
 
+import org.nutz.dao.entity.annotation.Column;
+
 import java.util.Date;
 
 public class UserScreen {
@@ -7,20 +9,23 @@ public class UserScreen {
 
     private String name;
 
+    @Column("nick_name")
     private String nickName;
-
+    @Column("avatar_url")
     private String avatarUrl;
+
+    private Integer status;
 
     private Integer type;
 
     private Integer vip;
-
+    @Column("crt_time")
     private Date crtTime;
-
+    @Column("upd_time")
     private Date updTime;
-
+    @Column("crt_user")
     private String crtUser;
-
+    @Column("upd_user")
     private String updUser;
 
     public Integer getId() {
@@ -53,6 +58,14 @@ public class UserScreen {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl == null ? null : avatarUrl.trim();
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Integer getType() {
