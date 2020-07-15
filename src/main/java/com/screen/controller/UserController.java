@@ -12,15 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
     @Autowired
     private UserScreenService userScreenService;
-//    @Autowired
-//    private UserService userService;
-//
-//    @RequestMapping("/{id}")
-//    public User getUserById(@PathVariable Integer id) {
-//        return userService.getUserById(id);
-//    }
 
     //添加用户 用户扫码操作
     @RequestMapping(value = "/insert",method = RequestMethod.POST)
@@ -29,9 +23,4 @@ public class UserController {
         return CommonResponse.success();
     }
 
-    //查询所有用户
-    @RequestMapping(value = "/selectusers",method = RequestMethod.POST)
-    public CommonResponse selectusers(){
-        return new CommonResponse(userScreenService.selectUsers());
-    }
 }

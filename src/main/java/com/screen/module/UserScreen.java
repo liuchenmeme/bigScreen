@@ -1,24 +1,30 @@
 package com.screen.module;
 
 import org.nutz.dao.entity.annotation.Column;
+import org.nutz.dao.entity.annotation.Id;
+import org.nutz.dao.entity.annotation.Table;
 
 import java.util.Date;
 
+@Table("user_screen")
 public class UserScreen {
+    @Id
     private Integer id;
-
+    @Column("name")
     private String name;
 
     @Column("nick_name")
     private String nickName;
     @Column("avatar_url")
     private String avatarUrl;
-
+    @Column("status")
     private Integer status;
-
+    @Column("type")
     private Integer type;
-
+    @Column("vip")
     private Integer vip;
+    @Column("level")
+    private Integer level;
     @Column("crt_time")
     private Date crtTime;
     @Column("upd_time")
@@ -86,6 +92,14 @@ public class UserScreen {
 
     public Date getCrtTime() {
         return crtTime;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public void setCrtTime(Date crtTime) {
